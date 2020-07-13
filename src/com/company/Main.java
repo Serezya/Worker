@@ -8,6 +8,5 @@ public class Main {
 
         Worker worker = new Worker(listener, listen);
         worker.start();
-        worker.onError();
     }
 }
