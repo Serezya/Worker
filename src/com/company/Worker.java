@@ -6,19 +6,16 @@ public class Worker {
         void onDone(String result);
     }
 
-    private OnTaskDoneListener callback;
-
-    public Worker(OnTaskDoneListener callback) {
-        this.callback = callback;
-    }
+    private final OnTaskDoneListener callback;
 
     public interface OnTaskErrorListener {
         void onError(String result);
     }
 
-    private OnTaskErrorListener errorCallback;
-
-    public Worker(OnTaskErrorListener errorCallback) {
+    private final OnTaskErrorListener errorCallback;
+    public Worker(OnTaskDoneListener callback, OnTaskErrorListener errorCallback)
+    {
+        this.callback = callback;
         this.errorCallback = errorCallback;
     }
 
